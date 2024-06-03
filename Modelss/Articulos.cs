@@ -20,7 +20,7 @@ namespace Ap1_P1_FrannielArias.Modelss
 
         [RegularExpression("^[0-9]+$", ErrorMessage = "El precio de venta debe ser mayor a 0 o es superior al soportado por el sistema")]
         [Range(minimum: 0.1, maximum: 99999999999999)]
-        public Decimal Venta {  get; set; }
+        public Decimal Precio {  get; set; }
         
     }
 }
