@@ -1,10 +1,15 @@
 using Ap1_P1_FrannielArias.Components;
+using Ap1_P1_FrannielArias.DAL;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+var ConStr = builder.Configuration.GetConnectionString("ConStr");
+builder.Services.AddDbContextFactory<Contexto>(options => options.UseSqlite(ConStr));
 
 var app = builder.Build();
 
