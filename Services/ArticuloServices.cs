@@ -15,12 +15,6 @@ namespace Ap1_P1_FrannielArias.Services
             _contexto = contexto;
         }
 
-        public async Task<bool> Extiste(int ArticulosId)
-        {
-            return await _contexto.Articulos
-                .AnyAsync(c => c.ArticuloId == ArticulosId);
-        }
-
         public async Task<bool> Existe(int ArticulosId)
         {
             return await _contexto.Articulos
