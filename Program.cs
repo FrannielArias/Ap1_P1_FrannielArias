@@ -2,6 +2,7 @@ using Ap1_P1_FrannielArias.Components;
 using Ap1_P1_FrannielArias.DAL;
 using Ap1_P1_FrannielArias.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,6 @@ builder.Services.AddRazorComponents()
 
 var ConStr = builder.Configuration.GetConnectionString("ConStr");
 builder.Services.AddDbContextFactory<Contexto>(options => options.UseSqlite(ConStr));
-
 
 var app = builder.Build();
 
